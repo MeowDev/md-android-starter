@@ -1,10 +1,11 @@
 package tw.meowdev.android.starter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import tw.meowdev.android.starter.app.BusProvider;
 
 public class AnotherActivity extends Activity {
 
@@ -25,7 +26,7 @@ public class AnotherActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                BusProvider.getInstance().post("Cat Xiao");
+                BusProvider.get().post("Cat Xiao");
             }
         });
     }

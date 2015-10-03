@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
+
+import tw.meowdev.android.starter.app.BusProvider;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.textView);
 
-        BusProvider.getInstance().register(this);
+        BusProvider.get().register(this);
     }
 
     @Subscribe
