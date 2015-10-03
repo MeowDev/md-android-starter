@@ -20,5 +20,13 @@ public class AnotherActivity extends Activity {
                 finish();
             }
         });
+
+        button = (Button)findViewById(R.id.buttonChange);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                BusProvider.getInstance().post("Cat Xiao");
+            }
+        });
     }
 }
