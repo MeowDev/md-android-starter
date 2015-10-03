@@ -18,6 +18,9 @@ public class StarterApplication extends Application {
         public Activity getCurrentActivity() {
             return currentActivity;
         }
+
+        private boolean _isForeground = false;
+        public boolean isForeground() { return _isForeground; }
     }
 
     private final static State_ State = new State_();
@@ -41,12 +44,16 @@ public class StarterApplication extends Application {
         @Override
         public void onActivityResumed(Activity activity) {
             logActivityEvent(activity, "resumed");
+
+            State._isForeground = true;
             State.currentActivity = activity;
         }
 
         @Override
         public void onActivityPaused(Activity activity) {
             logActivityEvent(activity, "paused");
+
+            State._isForeground = false;
             State.currentActivity = null;
         }
 
