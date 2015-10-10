@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button = (Button)findViewById(R.id.button_go_list);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), ListActivity.class);
+                startActivity(intent);
+            }
+        });
+
         textView = (TextView)findViewById(R.id.textView);
 
         BusProvider.get().register(this);
